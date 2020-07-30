@@ -1,4 +1,4 @@
-package com.lljjssjjll.wtd.entity.enums;
+package com.lljjssjjll.wd.entity.enums;
 
 public enum Target {
     TRAPEZIUS("승모근"),

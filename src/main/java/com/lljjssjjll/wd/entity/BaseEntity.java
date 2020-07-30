@@ -1,4 +1,4 @@
-package com.lljjssjjll.wtd.entity;
+package com.lljjssjjll.wd.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,12 +11,15 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public abstract class BaseEntity {
-    @Column
+    @Column(nullable = false)
     private LocalDateTime createDate;
+
     @Column
     private LocalDateTime updateDate;
-    @Column
+
+    @Column(nullable = false)
     private String createUserId;
+
     @Column
     private String updateUserId;
 }

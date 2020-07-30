@@ -1,4 +1,4 @@
-package com.lljjssjjll.wtd.entity.enums;
+package com.lljjssjjll.wd.entity.enums;
 
 public enum WeightUnit {
     KG("킬로그램"),

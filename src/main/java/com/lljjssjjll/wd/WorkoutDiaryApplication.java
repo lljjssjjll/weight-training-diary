@@ -1,4 +1,4 @@
-package com.lljjssjjll.wtd;
+package com.lljjssjjll.wd;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,16 +1,28 @@
-package com.lljjssjjll.wtd.entity;
+package com.lljjssjjll.wd.entity;
 
-import com.lljjssjjll.wtd.entity.enums.Role;
-import com.lljjssjjll.wtd.entity.enums.Sex;
-import com.lljjssjjll.wtd.entity.enums.WeightUnit;
+import com.lljjssjjll.wd.entity.enums.Role;
+import com.lljjssjjll.wd.entity.enums.Sex;
+import com.lljjssjjll.wd.entity.enums.WeightUnit;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
-@Table
+@Table(
+    uniqueConstraints = {
+        @UniqueConstraint(
+            name = "unique_idx_email",
+            columnNames = {"email"}
+        ),
+        @UniqueConstraint(
+            name = "unique_idx_nickname",
+            columnNames = {"nickname"}
+        )
+    }
+)
 @Getter
 @Setter
 public class User extends BaseEntity {
@@ -42,4 +54,7 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private WeightUnit weightUnit;
+
+    @OneToMany(mappedBy = "user")
+    private List<Workout> workoutList;
 }

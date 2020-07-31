@@ -8,7 +8,8 @@ public enum Equipment {
     MACHINE("머신"),
     BOSU_BALL("보수볼"),
     GYM_BALL("짐볼"),
-    BAND("밴드");
+    BAND("밴드"),
+    NONE("맨몸");
 
     private final String comment;
 

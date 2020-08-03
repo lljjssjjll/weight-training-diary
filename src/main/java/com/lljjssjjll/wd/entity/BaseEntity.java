@@ -22,4 +22,7 @@ public abstract class BaseEntity {
 
     @Column
     private String updateUserId;
+
+    @Column(nullable = false)
+    private Boolean flag;
 }

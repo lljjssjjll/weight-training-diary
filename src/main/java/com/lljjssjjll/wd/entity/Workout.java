@@ -35,4 +35,7 @@ public class Workout extends BaseEntity {
 
     @OneToMany(mappedBy = "workout")
     private List<WorkoutDetail> workoutDetailList;
+
+    @Column(nullable = false)
+    private Byte seq;
 }

@@ -19,9 +19,12 @@ repositories {
 	mavenCentral()
 }
 
-//ext {
+ext {
 //	set('keycloakVersion', '11.0.0')
-//}
+	set('modelmapperVersion', '2.3.8')
+	set('swaggerVersion', '2.9.2')
+	set('log4jdbcVersion', '1.16')
+}
 
 dependencies {
 	// spring
@@ -36,6 +39,13 @@ dependencies {
 	runtimeOnly 'mysql:mysql-connector-java'
 	// querydsl
 	implementation 'com.querydsl:querydsl-jpa'
+	// 매퍼
+	compile group: 'org.modelmapper', name: 'modelmapper', version: modelmapperVersion
+	// 스웨거
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: swaggerVersion
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: swaggerVersion
+	// sql log
+	compile group: 'org.bgee.log4jdbc-log4j2', name: 'log4jdbc-log4j2-jdbc4.1', version: log4jdbcVersion
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
